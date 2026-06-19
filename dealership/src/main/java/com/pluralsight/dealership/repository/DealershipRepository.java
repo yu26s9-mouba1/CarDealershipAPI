@@ -1,4 +1,11 @@
 package com.pluralsight.dealership.repository;
 
-public class DealershipRepository {
+import com.pluralsight.dealership.model.Dealership;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+
+@Repository
+public interface DealershipRepository extends JpaRepository<Dealership, Long> {
+
 }
