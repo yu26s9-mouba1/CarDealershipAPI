@@ -2,7 +2,6 @@ package com.pluralsight.dealership.model;
 import jakarta.persistence.*;
 
 
-
 @Entity
 @Table(name ="Vehicles")
 
@@ -10,10 +9,9 @@ public class Vehicle {
 
     //No argument constructor
     public  Vehicle() {}
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String vin;
     private int year;
     private String make;
@@ -22,10 +20,10 @@ public class Vehicle {
     private String vehicleType;
     private int odometer;
     private double price;
-    private boolean isSold;
+    private boolean sold;
 
 
-    public Vehicle(int id, String vin, int year, String make, String model, String color, String vehicleType, int odometer, double price, boolean isSold) {
+    public Vehicle(Long id, String vin, int year, String make, String model, String color, String vehicleType, int odometer, double price, boolean sold) {
         this.id = id;
         this.vin = vin;
         this.year = year;
@@ -35,14 +33,14 @@ public class Vehicle {
         this.vehicleType = vehicleType;
         this.odometer = odometer;
         this.price = price;
-        this.isSold = isSold;
+        this.sold = sold;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -111,10 +109,10 @@ public class Vehicle {
     }
 
     public boolean isSold() {
-        return isSold;
+        return sold;
     }
 
     public void setSold(boolean sold) {
-        isSold = sold;
+       this.sold = sold;
     }
 }
